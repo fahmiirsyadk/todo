@@ -17,8 +17,4 @@ contract TestContract is Test {
         assertEq(todo.getTasks()[0].title, "Buy ETH");
         assertEq(todo.getTasks()[0].content, "Buying eth for the wallet 0x00");
     }
-
-    function checkTaskOwner() public {
-        assertTrue(false);
-    }
 }

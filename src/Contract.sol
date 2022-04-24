@@ -24,7 +24,7 @@ contract Todo {
 
     event TaskStatusToggled(uint256 id, uint256 date, bool isDone);
 
-    function createTask(string memory _content, string memory _title) external {
+    function createTask(string memory _title, string memory _content) external {
         tasks[nextTaskId] = Task(
             nextTaskId,
             block.timestamp,

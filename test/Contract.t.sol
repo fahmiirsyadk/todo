@@ -2,22 +2,23 @@
 pragma solidity ^0.8.0;
 
 import "forge-std/Test.sol";
-
 import "src/Contract.sol";
 
 contract TestContract is Test {
-    Contract c;
+    Todo todo;
 
     function setUp() public {
-        c = new Contract();
+        todo = new Todo();
     }
 
-    function testBar() public {
-        assertEq(uint256(1), 2, "ok");
+    function testCreate() public {
+        todo.createTask("Buy ETH", "Buying eth for the wallet 0x00");
+        assertEq(todo.getTasks()[0].id, 0);
+        assertEq(todo.getTasks()[0].title, "Buy ETH");
+        assertEq(todo.getTasks()[0].content, "Buying eth for the wallet 0x00");
     }
 
-    function testFoo(uint256 x) public {
-        vm.assume(x < type(uint128).max);
-        assertEq(x + x, x * 2);
+    function checkTaskOwner() public {
+        assertTrue(false);
     }
 }

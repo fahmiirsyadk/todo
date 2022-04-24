@@ -1,2 +1,7 @@
 [ci]
 fuzz-runs = 10_000
+
+[default]
+src='contracts'
+test='contracts/test'
+remappings=['hardhat/=node_modules/hardhat/']
